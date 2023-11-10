@@ -16,11 +16,11 @@ auto main(int argc, char **argv) -> int
      */
     CLI::App app{PROJECT_NAME};
     int count = 20;
-    
+    app.add_option("-c,--count", count, "Set the count parameter")->check(CLI::PositiveNumber);
     try
     {
         app.set_version_flag("-V,--version", fmt::format("{} {}", PROJECT_VER, PROJECT_BUILD_DATE));
-        app.add_option("-c,--count", count, "Set the count parameter");
+       
     }
     catch (const CLI::ParseError &e)
     {
@@ -35,7 +35,7 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}! Count: {}\n", app.get_name(), count);
 
     /* INSERT YOUR CODE HERE */
-     std::srand(std::time(0)); // Seed für die Zufallsgenerierung
+     std::srand(std::time(nullptr)); // Seed für die Zufallsgenerierung
     std::vector<int> randomValues(count);
 
     for (int &value : randomValues) {
@@ -48,6 +48,16 @@ auto main(int argc, char **argv) -> int
         fmt::print("{} ", value);
     }
     fmt::print("\n");
+
+    std::sort(randomValues.begin(), randomValues.end());
+
+    // Gib die sortierten Werte aus
+    fmt::print("Sorted values: ");
+    for (const int &value : randomValues) {
+        fmt::print("{} ", value);
+    }
+    fmt::print("\n");
+
 
     return 0; /* exit gracefully*/
 }
