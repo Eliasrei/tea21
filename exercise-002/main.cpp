@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 #include "CLI/CLI.hpp"
 #include "config.h"
