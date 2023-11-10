@@ -35,28 +35,8 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}! Count: {}\n", app.get_name(), count);
 
     /* INSERT YOUR CODE HERE */
-     std::srand(std::time(1)); // Seed für die Zufallsgenerierung
+     std::srand(std::time(nullptr)); // Seed für die Zufallsgenerierung
     std::vector<int> randomValues(count);
-
-    for (int &value : randomValues) {
-        value = std::rand() % 100 + 1; // Zufallszahl von 1 bis 100 generieren
-    }
-
-    // Ausgabe der zufälligen Werte
-    fmt::print("Random values: ");
-    for (const int &value : randomValues) {
-        fmt::print("{} ", value);
-    }
-    fmt::print("\n");
-
-    std::sort(randomValues.begin(), randomValues.end());
-
-    // Gib die sortierten Werte aus
-    fmt::print("Sorted values: ");
-    for (const int &value : randomValues) {
-        fmt::print("{} ", value);
-    }
-    fmt::print("\n");
 
 
     return 0; /* exit gracefully*/
