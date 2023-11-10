@@ -35,7 +35,7 @@ auto main(int argc, char **argv) -> int
     fmt::print("Created a vector with {} elements\n",data.size());
 
     /*
-     * Den Zufall einordnen
+     * Den Zufall einordngen
      * Erstellen Sie einen ``std::vector`` mit der Größe von ``count`` 
      * und füllen diesen mit zufälligen Werten von 1-100.
      */
