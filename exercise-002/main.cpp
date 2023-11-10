@@ -5,7 +5,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
-
 #include "CLI/CLI.hpp"
 #include "config.h"
 
@@ -36,7 +35,7 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}! Count: {}\n", app.get_name(), count);
 
     /* INSERT YOUR CODE HERE */
-     std::srand(std::time(nullptr)); // Seed für die Zufallsgenerierung
+     std::srand(std::time(1)); // Seed für die Zufallsgenerierung
     std::vector<int> randomValues(count);
 
     for (int &value : randomValues) {
