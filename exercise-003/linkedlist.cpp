@@ -54,9 +54,12 @@ bool LinkedList::insert_after(LinkedListNode *loc, LinkedListNode *node)
     return ret;
   }
   // insert your code here ....
- node->pNext = loc->pNext;
+ if (loc != nullptr && loc->pNext != nullptr)
+{
+    node->pNext = loc->pNext;
     loc->pNext = node;
-
+    ret = true;
+}
     ret = true;
     return ret;
 }
@@ -68,7 +71,7 @@ bool LinkedList::insert_before(LinkedListNode *loc, LinkedListNode *node)
     return ret;
   }
   // Insert your code here....
-  if (loc == m_head)
+  if (loc != nullptr && loc == m_head)
     {
         insert_head(node);
     }
@@ -91,7 +94,7 @@ bool LinkedList::remove(LinkedListNode *node)
 {
   bool ret = false;
   // insert your code here ...
-if (node == m_head)
+if (node != nullptr && node == m_head)
     {
         m_head = node->pNext;
         delete node;
