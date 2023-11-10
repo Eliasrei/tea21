@@ -2,7 +2,7 @@
 #include <fmt/format.h>
 
 #include "CLI/CLI.hpp"
-#include "config.h"git
+#include "config.h"
 
 auto main(int argc, char **argv) -> int
 {
